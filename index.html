@@ -1,0 +1,110 @@
+<!--
+/**
+ * MBTA OnTime-HTML Document
+ * 
+ * Author  : Seth Gregory (20564261)
+ * Version : 1.0
+ * Revised : 2011/05/08
+ * 
+ */
+--> 
+ 
+<!DOCTYPE html> 
+ 
+<html lang="en-us">
+  <head> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css" /> 
+    <link rel="stylesheet" href="ontime.css" />
+    <meta charset="utf-8"> 
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.4.min.js"></script> 
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js"></script>
+    <script type="text/javascript" src="ontime.js"></script>
+    
+    <title>MBTA OnTime</title>                 
+  </head> 
+  
+  
+   <body>
+  
+    <div id="home" data-role="page">
+      <div data-role="header">
+        <h1>MBTA OnTime</h1> 
+      </div> 
+	  <ul data-role="listview" data-theme="d" data-dividertheme="c">
+	    <li data-role="list-divider">Version 1.0</li>
+		<li><a href="#stationlist" onClick="selectLine('Blue'); localStorage.selectedStationIndex=undefined;">Blue Line</a></li>
+		<li><a href="#stationlist" onClick="selectLine('Orange'); localStorage.selectedStationIndex=undefined;">Orange Line</a></li>
+		<li><a href="#stationlist" onClick="selectLine('Red'); localStorage.selectedStationIndex=undefined;">Red Line</a></li>
+      </ul>	  
+      <div data-role="footer">
+		<h1>&nbsp;</h1>
+      </div>
+    </div>
+	
+	<div id="stationlist" data-role="page">
+      <div data-role="header">
+        <h1 id="lineheader">Stations</h1> 
+      </div> 
+	  <ul data-role="listview" data-theme="d" data-dividertheme="c">
+	  	<li id="station0" style="display:block"><a href="#stationview" onClick="selectStation(0);">Station 0</a></li>
+	  	<li id="station1" style="display:block"><a href="#stationview" onClick="selectStation(1);">Station 1</a></li>
+	  	<li id="station2" style="display:block"><a href="#stationview" onClick="selectStation(2);">Station 2</a></li>
+	  	<li id="station3" style="display:block"><a href="#stationview" onClick="selectStation(3);">Station 3</a></li>
+	  	<li id="station4" style="display:block"><a href="#stationview" onClick="selectStation(4);">Station 4</a></li>
+	  	<li id="station5" style="display:block"><a href="#stationview" onClick="selectStation(5);">Station 5</a></li>
+	  	<li id="station6" style="display:block"><a href="#stationview" onClick="selectStation(6);">Station 6</a></li>
+	  	<li id="station7" style="display:block"><a href="#stationview" onClick="selectStation(7);">Station 7</a></li>
+	  	<li id="station8" style="display:block"><a href="#stationview" onClick="selectStation(8);">Station 8</a></li>
+	  	<li id="station9" style="display:block"><a href="#stationview" onClick="selectStation(9);">Station 9</a></li>
+	  	<li id="station10" style="display:block"><a href="#stationview" onClick="selectStation(10);">Station 10</a></li>
+	  	<li id="station11" style="display:block"><a href="#stationview" onClick="selectStation(11);">Station 11</a></li>
+	  	<li id="station12" style="display:block"><a href="#stationview" onClick="selectStation(12);">Station 12</a></li>
+	  	<li id="station13" style="display:block"><a href="#stationview" onClick="selectStation(13);">Station 13</a></li>
+	  	<li id="station14" style="display:block"><a href="#stationview" onClick="selectStation(14);">Station 14</a></li>
+	  	<li id="station15" style="display:block"><a href="#stationview" onClick="selectStation(15);">Station 15</a></li>
+	  	<li id="station16" style="display:block"><a href="#stationview" onClick="selectStation(16);">Station 16</a></li>
+	  	<li id="station17" style="display:block"><a href="#stationview" onClick="selectStation(17);">Station 17</a></li>
+	  	<li id="station18" style="display:block"><a href="#stationview" onClick="selectStation(18);">Station 18</a></li>
+	  	<li id="station19" style="display:block"><a href="#stationview" onClick="selectStation(19);">Station 19</a></li>
+	  	<li id="station20" style="display:block"><a href="#stationview" onClick="selectStation(20);">Station 20</a></li>
+	  	<li id="station21" style="display:block"><a href="#stationview" onClick="selectStation(21);">Station 21</a></li>
+	  	<li id="station22" style="display:block"><a href="#stationview" onClick="selectStation(22);">Station 22</a></li>
+	  </ul>
+      <div data-role="footer">
+		<h1>&nbsp;</h1>
+      </div>
+    </div>
+	
+	<div id="stationview" data-role="page">
+      <div data-role="header">
+        <h1 id="stationheader">Station</h1> 
+      </div>
+
+	<div class="ui-grid-a">
+		<div class="ui-block-a predictioncolumn">
+			<p class="nextlabel" id="direction1"></p>
+			<p class="nextlabel" id="terminus1"></p>
+			<h2 id="nextprediction1"></h2>
+			<p class="statuslabel" id="status1"></p>
+			<p><hr></p>
+			<p id="upcoming1"></p>
+		</div>
+		<div class="ui-block-b predictioncolumn">
+			<p class="nextlabel" id="direction2"></p>
+			<p class="nextlabel" id="terminus2"></p>
+			<h2 id="nextprediction2"></h2>
+			<p class="statuslabel" id="status2"></p>
+			<p><hr></p>
+			<p id="upcoming2"></p>
+		</div>
+
+      <div data-role="footer">
+		<h1>&nbsp;</h1>
+      </div>
+    </div>
+	
+  </body>
+</html>
